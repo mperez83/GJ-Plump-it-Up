@@ -1,18 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Scoreboard : MonoBehaviour
 {
-    // Start is called before the first frame update
+    float height;
+    public float heightGainRate;
+
+    public TextMeshProUGUI scoreText;
+
     void Start()
     {
-        
+
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        height += (heightGainRate * Time.deltaTime);
+        scoreText.text = "Height: " + Mathf.Floor(height).ToString() + "ft";
+    }
+
+    public float GetHeight()
+    {
+        return height;
     }
 }

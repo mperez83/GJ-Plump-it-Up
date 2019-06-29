@@ -48,8 +48,12 @@ public class Bird : MonoBehaviour
 
 
 
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        print("WOW");
+        if (other.CompareTag("Player"))
+        {
+            GameObject player = other.transform.parent.gameObject;
+            player.GetComponent<Player>().EndGame();
+        }
     }
 }
