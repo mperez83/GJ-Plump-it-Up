@@ -10,6 +10,9 @@ public class Bird : MonoBehaviour
     public float maxSpeed;
     Vector2 moveAmount;
 
+    public float minScale;
+    public float maxScale;
+
     void Start()
     {
         facingLeft = (Random.Range(0, 2) == 0) ? true : false;
@@ -21,8 +24,12 @@ public class Bird : MonoBehaviour
         else
         {
             transform.position = new Vector2(GameMaster.instance.screenLeftEdge, Random.Range(GameMaster.instance.screenBottomEdge, GameMaster.instance.screenTopEdge));
-            moveAmount = new Vector2(Random.Range(minSpeed, maxSpeed), 0); 
+            moveAmount = new Vector2(Random.Range(minSpeed, maxSpeed), 0);
+            GetComponent<SpriteRenderer>().flipX = true;
         }
+
+        float scaleValue = Random.Range(minScale, maxScale);
+        transform.localScale = new Vector2(scaleValue, scaleValue);
 
         if (Random.Range(0, 4200) == 69) moveAmount *= 100;
     }
