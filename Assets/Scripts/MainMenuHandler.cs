@@ -78,11 +78,14 @@ public class MainMenuHandler : MonoBehaviour
         kid.position = new Vector2(kidHomePos.x, kidHomePos.y + (titleSinVal / 3));
     }
 
+
+
     public void StartButton()
     {
         LeanTween.cancelAll();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.lockState = CursorLockMode.Confined;
+        GameMaster.instance.musicMaster.PlayGameMusic();
         SceneManager.LoadScene("Game");
     }
 

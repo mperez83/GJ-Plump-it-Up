@@ -14,7 +14,7 @@ public class Scoreboard : MonoBehaviour
     void Start()
     {
         highscoreText.text = "Highscore: " + GameMaster.instance.highScore.ToString("F1") + "ft";
-        LeanTween.value(heightGainRate, heightGainRate * 2, 60).setOnUpdate((value) =>
+        LeanTween.value(gameObject, heightGainRate, heightGainRate * 2, 60).setOnUpdate((value) =>
         {
             heightGainRate = value;
         });

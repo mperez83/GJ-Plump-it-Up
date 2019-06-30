@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameMaster : MonoBehaviour
 {
@@ -18,15 +19,37 @@ public class GameMaster : MonoBehaviour
     [HideInInspector]
     public float screenRightEdge;
 
+    [HideInInspector]
+    public MusicMaster musicMaster;
+
+
+
     void Awake()
     {
         if (instance != null && instance != this)
+        {
             Destroy(gameObject);
+            return;
+        }
         else
+        {
             instance = this;
+        }
         DontDestroyOnLoad(this);
 
         Cursor.lockState = CursorLockMode.Confined;
+
+        musicMaster = GetComponent<MusicMaster>();
+        switch (SceneManager.GetActiveScene().name)
+        {
+            case "MainMenu":
+                musicMaster.PlayMenuMusic();
+                break;
+
+            case "Game":
+                musicMaster.PlayGameMusic();
+                break;
+        }
     }
 
     void Update()

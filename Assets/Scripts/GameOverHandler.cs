@@ -14,6 +14,7 @@ public class GameOverHandler : MonoBehaviour
     {
         LeanTween.cancel(scoreboard.gameObject);
         scoreboard.heightGainRate = 0;
+
         float finalScore = scoreboard.GetHeight();
 
         finalHeightText.text = "Final Height: " + finalScore.ToString("F1") + "ft";
@@ -31,6 +32,7 @@ public class GameOverHandler : MonoBehaviour
 
     public void MainMenuButton()
     {
+        GameMaster.instance.musicMaster.PlayMenuMusic();
         SceneManager.LoadScene("MainMenu");
     }
 }
