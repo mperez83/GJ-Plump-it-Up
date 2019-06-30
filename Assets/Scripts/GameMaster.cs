@@ -7,6 +7,9 @@ public class GameMaster : MonoBehaviour
     public static GameMaster instance;
 
     [HideInInspector]
+    public float highScore = 0;
+
+    [HideInInspector]
     public float screenTopEdge;
     [HideInInspector]
     public float screenBottomEdge;
@@ -15,13 +18,15 @@ public class GameMaster : MonoBehaviour
     [HideInInspector]
     public float screenRightEdge;
 
-    void Start()
+    void Awake()
     {
         if (instance != null && instance != this)
             Destroy(gameObject);
         else
             instance = this;
         DontDestroyOnLoad(this);
+
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     void Update()

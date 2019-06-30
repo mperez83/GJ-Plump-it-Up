@@ -8,11 +8,20 @@ public class GameOverHandler : MonoBehaviour
 {
     public Scoreboard scoreboard;
     public TextMeshProUGUI finalHeightText;
+    public TextMeshProUGUI newHighscoreText;
 
     void OnEnable()
     {
+        LeanTween.cancel(scoreboard.gameObject);
         scoreboard.heightGainRate = 0;
-        finalHeightText.text = "Final Height: " + scoreboard.GetHeight().ToString("F1") + "ft";
+        float finalScore = scoreboard.GetHeight();
+
+        finalHeightText.text = "Final Height: " + finalScore.ToString("F1") + "ft";
+        if (finalScore > GameMaster.instance.highScore)
+        {
+            GameMaster.instance.highScore = finalScore;
+            newHighscoreText.text = "New Highscore!";
+        }
     }
 
     public void RestartButton()
