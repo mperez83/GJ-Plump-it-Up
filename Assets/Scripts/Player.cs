@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     Vector2 velocity;
     float movementDrag;
 
+    public AudioClip fartSound;
     public AudioClip deflateSound;
     public AudioClip popSound;
     public AudioClip fallSound;
@@ -31,6 +32,15 @@ public class Player : MonoBehaviour
         {
             movementDrag = value;
         });
+    }
+
+    void OnEnable()
+    {
+        if (Random.Range(0, 500) >= 0)
+        {
+            kidAS.clip = fartSound;
+            kidAS.Play();
+        }
     }
 
     void Update()
@@ -72,6 +82,7 @@ public class Player : MonoBehaviour
         kidAS.Play();
 
         bubbleObject.GetComponent<SpriteRenderer>().enabled = false;
+        bubbleObject.GetComponent<PolygonCollider2D>().enabled = false;
         kidObject.GetComponent<SpriteRenderer>().sprite = poppedSprite;
         LeanTween.moveY(gameObject, GameMaster.instance.screenBottomEdge - 2f, 1f);
         gameOverScreen.SetActive(true);
