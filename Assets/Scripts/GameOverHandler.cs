@@ -59,7 +59,7 @@ public class GameOverHandler : MonoBehaviour
         menuButton.position = new Vector2(mbHomePos.x + mbCosVal, mbHomePos.y + mbSinVal);
     }
 
-    public void RerestartButton()
+    public void RestartButton()
     {
         SceneManager.LoadScene("Game");
     }
