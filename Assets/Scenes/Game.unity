@@ -2161,6 +2161,8 @@ MonoBehaviour:
   scoreboard: {fileID: 193377593}
   finalHeightText: {fileID: 1188657847}
   newHighscoreText: {fileID: 1849621572}
+  restartButton: {fileID: 2135401478}
+  menuButton: {fileID: 693031184}
 --- !u!1 &1708949574
 GameObject:
   m_ObjectHideFlags: 0
@@ -2779,6 +2781,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pumpUpSpeed: 0.05
   fartSound: {fileID: 8300000, guid: 73b3722506a70f54f81cb974e55e586a, type: 3}
+  inflateSound: {fileID: 8300000, guid: 184cd79b493b18a479d6a7374ac1d04f, type: 3}
   deflateSound: {fileID: 8300000, guid: 1d84b9f329784a743a475849971745f4, type: 3}
   popSound: {fileID: 8300000, guid: 17954ac657bc45a488ce3cd3309a61a8, type: 3}
   fallSound: {fileID: 8300000, guid: e429037a6a53365429216d88119b44a1, type: 3}

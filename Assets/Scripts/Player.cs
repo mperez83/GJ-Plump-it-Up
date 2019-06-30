@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     float movementDrag;
 
     public AudioClip fartSound;
+    public AudioClip inflateSound;
     public AudioClip deflateSound;
     public AudioClip popSound;
     public AudioClip fallSound;
@@ -36,9 +37,14 @@ public class Player : MonoBehaviour
 
     void OnEnable()
     {
-        if (Random.Range(0, 500) >= 0)
+        if (Random.Range(0, 500) == 69)
         {
             kidAS.clip = fartSound;
+            kidAS.Play();
+        }
+        else
+        {
+            kidAS.clip = inflateSound;
             kidAS.Play();
         }
     }
