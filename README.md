@@ -1,5 +1,5 @@
 # Plump-it-Up
-For the June 2019 Tilted Shed Game Jam!
+Unity game submission for the 14th Tilted Game Jam! In this game, you play as a kid who tries to blow the biggest bubble of all time to ascend into the heavens.
 
 Play it here: https://starbladek.itch.io/plump-it-up
 
