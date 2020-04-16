@@ -1,4 +1,4 @@
-# Plump-it-Up
+# TGJ14-Plump-it-Up
 Unity game submission for the 14th Tilted Game Jam! In this game, you play as a kid who tries to blow the biggest bubble of all time to ascend into the heavens.
 
 Play it here: https://starbladek.itch.io/plump-it-up
